@@ -44,20 +44,30 @@ const areThereDuplicates1 = (arrOfLetters) => {
     }
 
     for (let letter in lettersFreq) {
-        if (lettersFreq[letter] === 2) return true;
+        if (lettersFreq[letter] > 1) return true;
     }
 
     return false;
 }
 
-// using the multiple pointers pattern
+// using the multiple pointers pattern (assumed that the arr is sorted in ascending order)
 const areThereDuplicates2 = (arrOfLetters) => {
+    let left = 0;
+    let right = 1;
 
+    while (right < arrOfLetters.length) {
+        if (arrOfLetters[left] === arrOfLetters[right]) {
+            return true;
+        }
+        left++;
+        right++;
+    }
+    return false;
 }
  
 // Test Cases:   
-// console.log(areThereDuplicates1(['a', 'a', 'c', 'd'])) //true 
-// console.log(areThereDuplicates1(['a', 'b', 'c'])) // false 
+console.log(areThereDuplicates2(['a', 'a', 'c', 'd'])) //true 
+console.log(areThereDuplicates1(['a', 'b', 'c'])) // false 
 
  
 /*  
