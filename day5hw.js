@@ -58,7 +58,8 @@ class SinglyLinkedList{
         }
 
         this.length++;
-
+        console.log('this.head', this.head);
+        console.log('this', this)
         return this;
     }
     // O(1) time | O(1) space
@@ -194,12 +195,13 @@ class SinglyLinkedList{
     // O(N) time | O(N) space
 } 
 
-//let sll = new SinglyLinkedList();
-// sll.push(1);
-// sll.push(1);
-// sll.push(2);
-// sll.push(2);
-// sll.push(3);
+let sll = new SinglyLinkedList();
+sll.push(1);
+sll.push(1);
+sll.push(2);
+sll.push(2);
+sll.push(3);
+console.log(sll.unshift(9));
 
 // Q) if two keys have maxFreq, how to make the code to return two vals instead of one?
 
@@ -283,5 +285,5 @@ function maxArea (height) {
 
 
 let height = [1, 8, 6, 2, 5, 4, 8, 3, 7];
-console.log(maxArea(height));
+//console.log(maxArea(height));
 
