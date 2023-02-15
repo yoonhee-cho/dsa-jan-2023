@@ -137,7 +137,7 @@ class SinglyLinkedList{
 
 
     insert(idx, val) {
-        if(idx < 0 || idx > this.length) return;
+        if (idx < 0 || idx > this.length) return;
         if (idx === 0) return this.shift(val);
         if (idx === this.length) return this.push(val);
 
